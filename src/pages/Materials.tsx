@@ -42,7 +42,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "secondary",
-      downloadUrl: "/presentations/Teacher Gulek's English Class.pdf.pdf",
+      downloadUrl: "/presentations/teacher-gulek-english-class.pdf.pdf",
       isPresentation: true
     }
   ];
