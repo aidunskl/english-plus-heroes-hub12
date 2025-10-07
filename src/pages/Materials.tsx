@@ -29,7 +29,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "primary",
-      downloadUrl: "/presentations/countries-nationalities.pdf",
+      downloadUrl: "/countries-nationalities.pdf",
       isPresentation: true
     },
     {
@@ -42,7 +42,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "secondary",
-      downloadUrl: "/presentations/teacher-gulek-english-class.pdf.pdf",
+      downloadUrl: "/teacher-gulek-english-class.pdf",
       isPresentation: true
     },
     {
@@ -55,7 +55,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "success",
-      downloadUrl: "/presentations/Rust green brown present tense writing presentation.pdf.pdf",
+      downloadUrl: "/present-tense-writing.pdf",
       isPresentation: true
     }
   ];
