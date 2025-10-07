@@ -8,54 +8,6 @@ import { FileText, Download, BookOpen, Users, Calendar, File, Presentation } fro
 const Materials = () => {
   const materials = [
     {
-      title: "Types of Adverbs - Презентация",
-      description: "Үстеулердің түрлері туралы интерактивті презентация: Manner, Time, Place, Frequency",
-      type: "PDF",
-      size: "634 КБ",
-      pages: "6+ слайд",
-      author: "Teacher Samal",
-      date: "2025",
-      icon: BookOpen,
-      color: "primary",
-      downloadUrl: "/materials/teacher-gulek-english-class.pdf"
-    },
-    {
-      title: "Unit 2: Helping and Heroes - Workbook",
-      description: "Unit 2 бойынша жаттығулар жинағы",
-      type: "PDF",
-      size: "1.8 MB",
-      pages: "32 бет",
-      author: "Teacher Samal",
-      date: "2025",
-      icon: FileText,
-      color: "secondary",
-      downloadUrl: "/materials/unit2-workbook.pdf"
-    },
-    {
-      title: "Grammar Reference Guide",
-      description: "Грамматикалық ережелердің анықтамалығы",
-      type: "PDF",
-      size: "3.2 MB",
-      pages: "28 бет",
-      author: "Teacher Samal",
-      date: "2025",
-      icon: File,
-      color: "accent",
-      downloadUrl: "/materials/grammar-reference.pdf"
-    },
-    {
-      title: "Vocabulary Cards",
-      description: "Сөздік карточкалары - Unit 2",
-      type: "PDF",
-      size: "1.5 MB",
-      pages: "20 бет",
-      author: "Teacher Samal",
-      date: "2025",
-      icon: Users,
-      color: "success",
-      downloadUrl: "/materials/vocabulary-cards.pdf"
-    },
-    {
       title: "Languages around the world",
       description: "Интерактивті презентация Canva платформасында",
       type: "Canva",
