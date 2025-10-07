@@ -85,3 +85,4 @@ git config --global user.email "ваш-email@example.com"
    git pull origin main --allow-unrelated-histories
    git push -u origin main
    ```
+

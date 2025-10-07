@@ -120,3 +120,4 @@ git push -u origin main
 - Добавить Issues и Project для управления проектом
 - Настроить Actions для автоматической сборки
 - Добавить Collaborators для совместной работы
+
