@@ -3,110 +3,139 @@ import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, RotateCcw, Trophy, Timer, Globe, CheckCircle, XCircle } from "lucide-react";
+import { ArrowLeft, RotateCcw, Trophy, Timer, CheckCircle, XCircle, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-interface LanguageQuestion {
+interface QuizQuestion {
   id: number;
-  country: string;
-  flag: string;
-  correctLanguage: string;
+  question: string;
   options: string[];
+  correctAnswer: number;
   explanation: string;
 }
 
-const languageQuestions: LanguageQuestion[] = [
+const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    country: "Kazakhstan",
-    flag: "🇰🇿",
-    correctLanguage: "Kazakh",
-    options: ["Kazakh", "Russian", "English", "Chinese"],
-    explanation: "Қазақстанда негізгі тіл қазақ тілі"
+    question: "Choose the correct present simple question form for 'You like coffee'.",
+    options: [
+      "Are you like coffee?",
+      "Do you like coffee?",
+      "Does you like coffee?"
+    ],
+    correctAnswer: 1,
+    explanation: "Дұрыс жауап: 'Do you like coffee?' - 2-ші және 3-ші тұлға үшін 'do' қолданылады"
   },
   {
     id: 2,
-    country: "Japan",
-    flag: "🇯🇵",
-    correctLanguage: "Japanese",
-    options: ["Japanese", "Chinese", "Korean", "English"],
-    explanation: "Жапонияда негізгі тіл жапон тілі"
+    question: "What is the correct question form for 'He goes to school'?",
+    options: [
+      "Does he go to school?",
+      "Do he goes to school?",
+      "Do he go to school?"
+    ],
+    correctAnswer: 0,
+    explanation: "Дұрыс жауап: 'Does he go to school?' - 3-ші тұлға үшін 'does' қолданылады, бас сөйлемде 'go' қалдырылады"
   },
   {
     id: 3,
-    country: "Brazil",
-    flag: "🇧🇷",
-    correctLanguage: "Portuguese",
-    options: ["Portuguese", "Spanish", "English", "French"],
-    explanation: "Бразилияда негізгі тіл португал тілі"
+    question: "Turn into a question: 'They study every evening'.",
+    options: [
+      "Do they study every evening?",
+      "Does they study every evening?",
+      "They do study every evening?"
+    ],
+    correctAnswer: 0,
+    explanation: "Дұрыс жауап: 'Do they study every evening?' - Көпше тұлға үшін 'do' қолданылады"
   },
   {
     id: 4,
-    country: "Germany",
-    flag: "🇩🇪",
-    correctLanguage: "German",
-    options: ["German", "French", "English", "Dutch"],
-    explanation: "Германияда негізгі тіл неміс тілі"
+    question: "Form a present simple question using a modal: 'Mary can swim'.",
+    options: [
+      "Can Mary swim?",
+      "Can swim Mary?",
+      "Mary can swim?"
+    ],
+    correctAnswer: 0,
+    explanation: "Дұрыс жауап: 'Can Mary swim?' - Модальді етістіктер үшін ерекше ереже: can + subject + verb"
   },
   {
     id: 5,
-    country: "Egypt",
-    flag: "🇪🇬",
-    correctLanguage: "Arabic",
-    options: ["Arabic", "English", "French", "German"],
-    explanation: "Мысырда негізгі тіл араб тілі"
+    question: "Convert to a present simple question: 'They play tennis on Sundays'.",
+    options: [
+      "Does they play tennis on Sundays?",
+      "Do they play tennis on Sundays?",
+      "Do they plays tennis on Sundays?"
+    ],
+    correctAnswer: 1,
+    explanation: "Дұрыс жауап: 'Do they play tennis on Sundays?' - Көпше тұлға үшін 'do' қолданылады"
   },
   {
     id: 6,
-    country: "India",
-    flag: "🇮🇳",
-    correctLanguage: "Hindi",
-    options: ["Hindi", "English", "Bengali", "Tamil"],
-    explanation: "Үндістанда ең көп сөйлейтін тіл хинди"
+    question: "Choose the correct question form for 'She runs fast'.",
+    options: [
+      "She does run fast?",
+      "Do she run fast?",
+      "Does she run fast?"
+    ],
+    correctAnswer: 2,
+    explanation: "Дұрыс жауап: 'Does she run fast?' - 3-ші тұлға үшін 'does' қолданылады"
   },
   {
     id: 7,
-    country: "South Korea",
-    flag: "🇰🇷",
-    correctLanguage: "Korean",
-    options: ["Korean", "Chinese", "Japanese", "English"],
-    explanation: "Оңтүстік Кореяда негізгі тіл корей тілі"
+    question: "What is the question form for 'We live in London'?",
+    options: [
+      "Are we live in London?",
+      "Do we lives in London?",
+      "Do we live in London?"
+    ],
+    correctAnswer: 2,
+    explanation: "Дұрыс жауап: 'Do we live in London?' - Бірінші тұлға көпше үшін 'do' қолданылады"
   },
   {
     id: 8,
-    country: "Turkey",
-    flag: "🇹🇷",
-    correctLanguage: "Turkish",
-    options: ["Turkish", "Arabic", "Greek", "English"],
-    explanation: "Түркияда негізгі тіл түрік тілі"
+    question: "Which is the inverted form for 'The cat sleeps'?",
+    options: [
+      "Does the cat sleep?",
+      "Do cat sleep?",
+      "Do the cat sleep?"
+    ],
+    correctAnswer: 0,
+    explanation: "Дұрыс жауап: 'Does the cat sleep?' - 3-ші тұлға үшін 'does' қолданылады, бас сөйлемде 'sleep' қалдырылады"
   },
   {
     id: 9,
-    country: "Russia",
-    flag: "🇷🇺",
-    correctLanguage: "Russian",
-    options: ["Russian", "Ukrainian", "Belarusian", "Kazakh"],
-    explanation: "Ресейде негізгі тіл орыс тілі"
+    question: "Make a question with 'where' for 'They work in a hospital'.",
+    options: [
+      "Where does they work?",
+      "Where they work?",
+      "Where do they work?"
+    ],
+    correctAnswer: 2,
+    explanation: "Дұрыс жауап: 'Where do they work?' - Сұрақ сөздерімен де 'do/does' қолданылады"
   },
   {
     id: 10,
-    country: "Thailand",
-    flag: "🇹🇭",
-    correctLanguage: "Thai",
-    options: ["Thai", "English", "Chinese", "Vietnamese"],
-    explanation: "Тайландта негізгі тіл тай тілі"
+    question: "Which sentence is a correct present simple question?",
+    options: [
+      "Do you like coffee?",
+      "Are you like coffee?",
+      "Are you liking coffee?"
+    ],
+    correctAnswer: 0,
+    explanation: "Дұрыс жауап: 'Do you like coffee?' - Present Simple сұрақтарында 'do/does' қолданылады"
   }
 ];
 
-const LanguageQuiz = () => {
+const EducaplayPresentSimpleQuiz = () => {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(0);
   const [isGameActive, setIsGameActive] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
@@ -133,12 +162,12 @@ const LanguageQuiz = () => {
     toast.success("Ойын басталды! 🎮");
   };
 
-  const handleAnswer = (answer: string) => {
+  const handleAnswer = (answerIndex: number) => {
     if (selectedAnswer !== null) return;
     
-    setSelectedAnswer(answer);
-    const question = languageQuestions[currentQuestion];
-    const isCorrect = answer === question.correctLanguage;
+    setSelectedAnswer(answerIndex);
+    const question = quizQuestions[currentQuestion];
+    const isCorrect = answerIndex === question.correctAnswer;
     
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -156,14 +185,14 @@ const LanguageQuiz = () => {
     setShowExplanation(true);
     
     setTimeout(() => {
-      if (currentQuestion < languageQuestions.length - 1) {
+      if (currentQuestion < quizQuestions.length - 1) {
         setCurrentQuestion(prev => prev + 1);
         setSelectedAnswer(null);
         setShowExplanation(false);
       } else {
         setIsComplete(true);
         setIsGameActive(false);
-        toast.success(`Ойын аяқталды! Ұпай: ${score + (isCorrect ? 1 : 0)}/${languageQuestions.length}`);
+        toast.success(`Ойын аяқталды! Ұпай: ${score + (isCorrect ? 1 : 0)}/${quizQuestions.length}`);
       }
     }, 3000);
   };
@@ -180,18 +209,6 @@ const LanguageQuiz = () => {
 
   const getAccuracy = () => {
     return Math.round((score / (currentQuestion + 1)) * 100);
-  };
-
-  const getButtonStyle = (option: string) => {
-    if (selectedAnswer === null) return "";
-    
-    const question = languageQuestions[currentQuestion];
-    const isCorrect = option === question.correctLanguage;
-    const isSelected = option === selectedAnswer;
-    
-    if (isCorrect) return "bg-success text-success-foreground";
-    if (isSelected && !isCorrect) return "bg-destructive text-destructive-foreground";
-    return "";
   };
 
   return (
@@ -212,12 +229,12 @@ const LanguageQuiz = () => {
           <Card className="p-8 mb-6 bg-gradient-card">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
               <div>
-                <Badge className="mb-4" variant="secondary">Интерактивті викторина</Badge>
+                <Badge className="mb-4" variant="secondary">Интерактивті тест</Badge>
                 <h1 className="text-3xl font-bold mb-2">
-                  Language Quiz - Қай елде қай тілде сөйлейді?
+                  Present Simple Question Form Quiz
                 </h1>
                 <p className="text-muted-foreground">
-                  Елдерді олардың негізгі тілдерімен сәйкестендіріңіз
+                  Present Simple сұрақ формаларын дұрыс құруды үйреніңіз
                 </p>
               </div>
               <Button onClick={resetGame} variant="outline" className="gap-2">
@@ -229,14 +246,15 @@ const LanguageQuiz = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
               <Badge variant="outline" className="p-3 justify-center gap-2">
                 <Trophy className="w-4 h-4 text-success" />
-                <span>Ұпай: {score}/{languageQuestions.length}</span>
+                <span>Ұпай: {score}/{quizQuestions.length}</span>
               </Badge>
               <Badge variant="outline" className="p-3 justify-center gap-2">
                 <Timer className="w-4 h-4 text-primary" />
                 <span>Уақыт: {formatTime(time)}</span>
               </Badge>
               <Badge variant="outline" className="p-3 justify-center gap-2">
-                <span>Сұрақ: {currentQuestion + 1}/{languageQuestions.length}</span>
+                <Zap className="w-4 h-4 text-orange-500" />
+                <span>Үздік серия: {maxStreak}</span>
               </Badge>
               <Badge variant="outline" className="p-3 justify-center gap-2">
                 <span>Дәлдік: {getAccuracy()}%</span>
@@ -246,12 +264,12 @@ const LanguageQuiz = () => {
 
           {!isGameActive && !isComplete && (
             <Card className="p-8 text-center mb-6">
-              <h2 className="text-2xl font-bold mb-4">Тілдер туралы викторина</h2>
+              <h2 className="text-2xl font-bold mb-4">Present Simple Quiz</h2>
               <p className="text-muted-foreground mb-6">
-                Елдерді олардың негізгі тілдерімен сәйкестендіріңіз
+                Present Simple сұрақ формаларын дұрыс таңдаңыз
               </p>
               <Button onClick={startGame} size="lg" className="gap-2">
-                <Globe className="w-5 h-5" />
+                <Zap className="w-5 h-5" />
                 Ойынды бастау
               </Button>
             </Card>
@@ -262,39 +280,45 @@ const LanguageQuiz = () => {
               <div className="text-center mb-8">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-sm text-muted-foreground">
-                    Сұрақ {currentQuestion + 1}/{languageQuestions.length}
+                    Сұрақ {currentQuestion + 1}/{quizQuestions.length}
                   </span>
                   <div className="flex gap-2">
                     <Badge variant="outline" className="gap-1">
-                      <span>Серия: {streak}</span>
+                      <Zap className="w-3 h-3" />
+                      Серия: {streak}
                     </Badge>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="text-4xl">
-                    {languageQuestions[currentQuestion].flag}
-                  </div>
-                  <h2 className="text-3xl font-bold">
-                    {languageQuestions[currentQuestion].country}
-                  </h2>
-                </div>
-                
-                <p className="text-muted-foreground mb-8 text-lg">
-                  Бұл елде негізгі тіл қандай?
-                </p>
+                <h2 className="text-2xl font-bold mb-6 leading-relaxed">
+                  {quizQuestions[currentQuestion].question}
+                </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                {languageQuestions[currentQuestion].options.map((option, index) => (
+              <div className="space-y-3 mb-8">
+                {quizQuestions[currentQuestion].options.map((option, index) => (
                   <Button
                     key={index}
-                    onClick={() => handleAnswer(option)}
+                    onClick={() => handleAnswer(index)}
                     disabled={selectedAnswer !== null}
-                    className={`gap-2 text-lg py-6 ${getButtonStyle(option)}`}
-                    variant={selectedAnswer === null ? "outline" : "default"}
+                    className={`w-full text-left justify-start gap-3 p-4 h-auto ${
+                      selectedAnswer === index 
+                        ? (index === quizQuestions[currentQuestion].correctAnswer 
+                            ? "bg-success text-success-foreground" 
+                            : "bg-destructive text-destructive-foreground")
+                        : selectedAnswer !== null && index === quizQuestions[currentQuestion].correctAnswer
+                        ? "bg-success text-success-foreground"
+                        : ""
+                    }`}
                   >
-                    {option}
+                    <span className="font-semibold">{String.fromCharCode(65 + index)}.</span>
+                    <span>{option}</span>
+                    {selectedAnswer === index && index === quizQuestions[currentQuestion].correctAnswer && (
+                      <CheckCircle className="w-5 h-5 ml-auto" />
+                    )}
+                    {selectedAnswer === index && index !== quizQuestions[currentQuestion].correctAnswer && (
+                      <XCircle className="w-5 h-5 ml-auto" />
+                    )}
                   </Button>
                 ))}
               </div>
@@ -303,7 +327,7 @@ const LanguageQuiz = () => {
                 <div className="bg-blue-50 dark:bg-blue-950 p-6 rounded-lg">
                   <h3 className="font-bold text-lg mb-2">Түсініктеме:</h3>
                   <p className="text-blue-800 dark:text-blue-200">
-                    {languageQuestions[currentQuestion].explanation}
+                    {quizQuestions[currentQuestion].explanation}
                   </p>
                 </div>
               )}
@@ -316,7 +340,7 @@ const LanguageQuiz = () => {
               <h2 className="text-3xl font-bold mb-4">Тамаша! 🎉</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                 <div className="bg-background p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-success">{score}/{languageQuestions.length}</div>
+                  <div className="text-2xl font-bold text-success">{score}/{quizQuestions.length}</div>
                   <div className="text-sm text-muted-foreground">Дұрыс жауап</div>
                 </div>
                 <div className="bg-background p-4 rounded-lg">
@@ -342,11 +366,11 @@ const LanguageQuiz = () => {
           <Card className="p-6 bg-muted/30">
             <h3 className="font-bold text-lg mb-3">📖 Ойын ережелері:</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>• Әр елді оның негізгі тілімен сәйкестендіріңіз</li>
+              <li>• Әр сұраққа дұрыс жауапты таңдаңыз</li>
+              <li>• Present Simple сұрақ формаларын дұрыс құруды үйреніңіз</li>
               <li>• Дұрыс жауап үшін ұпай аласыз</li>
               <li>• Үздік серия жасауға тырысыңыз</li>
-              <li>• Жылдам және дұрыс жауап беруге тырысыңыз</li>
-              <li>• Әр сұрақтан кейін түсініктеме оқыңыз</li>
+              <li>• Түсініктемелерді оқып, грамматиканы үйреніңіз</li>
             </ul>
           </Card>
         </div>
@@ -355,7 +379,4 @@ const LanguageQuiz = () => {
   );
 };
 
-export default LanguageQuiz;
-
-
-
+export default EducaplayPresentSimpleQuiz;

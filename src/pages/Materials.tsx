@@ -44,6 +44,19 @@ const Materials = () => {
       color: "secondary",
       downloadUrl: "/presentations/teacher-gulek-english-class.pdf.pdf",
       isPresentation: true
+    },
+    {
+      title: "Present Tense Writing - Презентация",
+      description: "Present tense жазу ережелері мен жаттығулары",
+      type: "PDF",
+      size: "2.1 MB",
+      pages: "Грамматика слайдтар",
+      author: "Teacher Samal",
+      date: "2025",
+      icon: Presentation,
+      color: "success",
+      downloadUrl: "/presentations/Rust green brown present tense writing presentation.pdf.pdf",
+      isPresentation: true
     }
   ];
 

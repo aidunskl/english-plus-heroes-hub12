@@ -28,6 +28,8 @@ import AdverbsMatch from "./pages/games/AdverbsMatch";
 import EducaplayAdverbs from "./pages/games/EducaplayAdverbs";
 import EducaplayDictation from "./pages/games/EducaplayDictation";
 import EducaplayTrueFalse from "./pages/games/EducaplayTrueFalse";
+import EducaplayYesNo from "./pages/games/EducaplayYesNo";
+import EducaplayPresentSimpleQuiz from "./pages/games/EducaplayPresentSimpleQuiz";
 import CountriesMatching from "./pages/games/CountriesMatching";
 import LanguageQuiz from "./pages/games/LanguageQuiz";
 import PresentSimpleChallenge from "./pages/games/PresentSimpleChallenge";
@@ -60,6 +62,8 @@ const App = () => (
           <Route path="/games/educaplay-adverbs" element={<EducaplayAdverbs />} />
           <Route path="/games/educaplay-dictation" element={<EducaplayDictation />} />
           <Route path="/games/educaplay-true-false" element={<EducaplayTrueFalse />} />
+          <Route path="/games/educaplay-yes-no" element={<EducaplayYesNo />} />
+          <Route path="/games/educaplay-present-simple-quiz" element={<EducaplayPresentSimpleQuiz />} />
           <Route path="/games/countries-matching" element={<CountriesMatching />} />
           <Route path="/games/language-quiz" element={<LanguageQuiz />} />
           <Route path="/games/present-simple-challenge" element={<PresentSimpleChallenge />} />

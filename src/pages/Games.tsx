@@ -46,6 +46,24 @@ const Games = () => {
       path: "/games/educaplay-true-false"
     },
     {
+      title: "Educaplay Yes/No",
+      description: "Present Simple сұрақтарына Иә/Жоқ деп жауап беру",
+      difficulty: "Easy",
+      time: "5 мин",
+      players: "1",
+      color: "primary",
+      path: "/games/educaplay-yes-no"
+    },
+    {
+      title: "Educaplay Present Simple Quiz",
+      description: "Present Simple сұрақ формаларын дұрыс құру",
+      difficulty: "Medium",
+      time: "8 мин",
+      players: "1",
+      color: "secondary",
+      path: "/games/educaplay-present-simple-quiz"
+    },
+    {
       title: "Countries Matching",
       description: "Елді ұлттықпен сәйкестендір",
       difficulty: "Easy",
