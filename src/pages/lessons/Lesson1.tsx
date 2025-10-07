@@ -1,21 +1,46 @@
 import Navigation from "@/components/Navigation";
+import AudioPlayer from "@/components/AudioPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Globe, BookOpen, CheckCircle2, Download, ArrowRight } from "lucide-react";
+import { Globe, BookOpen, CheckCircle2, Download, ArrowRight, Volume2, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Lesson1 = () => {
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+
   const vocabulary = [
-    { country: "Germany", nationality: "German", flag: "🇩🇪" },
-    { country: "France", nationality: "French", flag: "🇫🇷" },
-    { country: "Poland", nationality: "Polish", flag: "🇵🇱" },
-    { country: "Kazakhstan", nationality: "Kazakh", flag: "🇰🇿" },
-    { country: "China", nationality: "Chinese", flag: "🇨🇳" },
-    { country: "Brazil", nationality: "Brazilian", flag: "🇧🇷" },
-    { country: "Japan", nationality: "Japanese", flag: "🇯🇵" },
-    { country: "Spain", nationality: "Spanish", flag: "🇪🇸" },
+    { country: "Germany", nationality: "German", flag: "🇩🇪", pronunciation: "/ˈdʒɜːrməni/" },
+    { country: "France", nationality: "French", flag: "🇫🇷", pronunciation: "/fræns/" },
+    { country: "Poland", nationality: "Polish", flag: "🇵🇱", pronunciation: "/ˈpoʊlənd/" },
+    { country: "Kazakhstan", nationality: "Kazakh", flag: "🇰🇿", pronunciation: "/kəˈzɑːkstæn/" },
+    { country: "China", nationality: "Chinese", flag: "🇨🇳", pronunciation: "/ˈtʃaɪnə/" },
+    { country: "Brazil", nationality: "Brazilian", flag: "🇧🇷", pronunciation: "/brəˈzɪl/" },
+    { country: "Japan", nationality: "Japanese", flag: "🇯🇵", pronunciation: "/dʒəˈpæn/" },
+    { country: "Spain", nationality: "Spanish", flag: "🇪🇸", pronunciation: "/speɪn/" },
   ];
+
+  const speakText = (text: string) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.8;
+      speechSynthesis.speak(utterance);
+    }
+  };
+
+  const checkAnswer = () => {
+    if (selectedCountry && userAnswer) {
+      const correctNationality = vocabulary.find(v => v.country === selectedCountry)?.nationality;
+      const isAnswerCorrect = userAnswer.toLowerCase() === correctNationality?.toLowerCase();
+      setIsCorrect(isAnswerCorrect);
+      setShowAnswer(true);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -60,17 +85,52 @@ const Lesson1 = () => {
             </div>
           </Card>
 
+          {/* Audio Section */}
+          <Card className="p-6 mb-8 bg-gradient-card">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Volume2 className="w-6 h-6 text-primary" />
+              Аудио материал
+            </h2>
+            <AudioPlayer 
+              src="/audio/lesson1-countries.mp3"
+              title="Countries and Nationalities - Pronunciation"
+              className="mb-4"
+            />
+            <p className="text-sm text-muted-foreground">
+              Тыңдап, елдер мен ұлттардың дұрыс айтылуын үйреніңіз
+            </p>
+          </Card>
+
           {/* Vocabulary Cards */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-6">📚 Key Vocabulary</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {vocabulary.map((item, index) => (
-                <Card key={index} className="p-4 hover:shadow-medium transition-all hover:-translate-y-1 bg-gradient-card group cursor-pointer">
+                <Card 
+                  key={index} 
+                  className={`p-4 hover:shadow-medium transition-all hover:-translate-y-1 bg-gradient-card group cursor-pointer ${
+                    selectedCountry === item.country ? 'ring-2 ring-primary' : ''
+                  }`}
+                  onClick={() => setSelectedCountry(item.country)}
+                >
                   <div className="text-4xl mb-2 text-center group-hover:scale-110 transition-transform">
                     {item.flag}
                   </div>
                   <h3 className="font-bold text-center mb-1">{item.country}</h3>
                   <p className="text-sm text-muted-foreground text-center">{item.nationality}</p>
+                  <p className="text-xs text-muted-foreground text-center mt-1">{item.pronunciation}</p>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="w-full mt-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speakText(`${item.country} - ${item.nationality}`);
+                    }}
+                  >
+                    <Play className="w-3 h-3 mr-1" />
+                    Айту
+                  </Button>
                 </Card>
               ))}
             </div>
@@ -93,6 +153,48 @@ const Lesson1 = () => {
             </div>
           </Card>
 
+          {/* Interactive Exercise */}
+          <Card className="p-6 mb-8 bg-gradient-card">
+            <h2 className="text-2xl font-bold mb-4">🎯 Interactive Exercise</h2>
+            <div className="space-y-4">
+              <p className="text-muted-foreground">
+                Елді таңдап, оның ұлтын жазыңыз:
+              </p>
+              
+              {selectedCountry && (
+                <div className="p-4 bg-primary/10 rounded-lg">
+                  <p className="font-semibold mb-2">Таңдалған ел: {selectedCountry}</p>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={userAnswer}
+                      onChange={(e) => setUserAnswer(e.target.value)}
+                      placeholder="Ұлтты жазыңыз..."
+                      className="flex-1 px-3 py-2 border rounded-md"
+                    />
+                    <Button onClick={checkAnswer} disabled={!userAnswer}>
+                      Тексеру
+                    </Button>
+                  </div>
+                  
+                  {showAnswer && (
+                    <div className={`mt-3 p-3 rounded-lg ${
+                      isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                    }`}>
+                      {isCorrect ? (
+                        <p className="font-semibold">✅ Дұрыс! Тамаша!</p>
+                      ) : (
+                        <p className="font-semibold">
+                          ❌ Қате. Дұрыс жауап: {vocabulary.find(v => v.country === selectedCountry)?.nationality}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </Card>
+
           {/* Activities */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-6">🎯 Practice Activities</h2>
@@ -107,7 +209,11 @@ const Lesson1 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Matching Exercise</h3>
                     <p className="text-muted-foreground mb-4">Елдерді ұлттармен сәйкестендір</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => window.location.href = '/games/countries-matching'}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау
                     </Button>
@@ -122,11 +228,18 @@ const Lesson1 = () => {
                     <span className="font-bold text-secondary">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-lg mb-2">Fill in the Blanks</h3>
-                    <p className="text-muted-foreground mb-4">I'm from ___ (country) → I'm ___ (nationality)</p>
-                    <Button variant="outline" className="gap-2">
-                      <BookOpen className="w-4 h-4" />
-                      Жаттығуды бастау
+                    <h3 className="font-bold text-lg mb-2">Pronunciation Practice</h3>
+                    <p className="text-muted-foreground mb-4">Елдер мен ұлттардың дұрыс айтылуын үйреніңіз</p>
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => {
+                        const randomCountry = vocabulary[Math.floor(Math.random() * vocabulary.length)];
+                        speakText(`I'm from ${randomCountry.country}. I'm ${randomCountry.nationality}.`);
+                      }}
+                    >
+                      <Volume2 className="w-4 h-4" />
+                      Айтуды тыңдау
                     </Button>
                   </div>
                 </div>
@@ -140,10 +253,17 @@ const Lesson1 = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Speaking Practice</h3>
-                    <p className="text-muted-foreground mb-4">"Find someone who..." - pair work activity</p>
-                    <Button variant="outline" className="gap-2">
-                      <BookOpen className="w-4 h-4" />
-                      Нұсқаулықты көру
+                    <p className="text-muted-foreground mb-4">"Where are you from?" сұрағын тәжірибелеңіз</p>
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => {
+                        const randomCountry = vocabulary[Math.floor(Math.random() * vocabulary.length)];
+                        speakText(`Where are you from? I'm from ${randomCountry.country}. I'm ${randomCountry.nationality}.`);
+                      }}
+                    >
+                      <Play className="w-4 h-4" />
+                      Диалогты тыңдау
                     </Button>
                   </div>
                 </div>
@@ -157,13 +277,84 @@ const Lesson1 = () => {
               <Download className="w-6 h-6 text-accent" />
               Үй тапсырмасы
             </h2>
-            <p className="text-muted-foreground mb-4">
-              Worksheet 1: Countries & Nationalities matching + 5-sentence mini-writing
-            </p>
-            <Button variant="outline" className="gap-2">
-              <Download className="w-4 h-4" />
-              Worksheet жүктеу (PDF)
-            </Button>
+            <div className="space-y-4">
+              <p className="text-muted-foreground">
+                Worksheet 1: Countries & Nationalities matching + 5-sentence mini-writing
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                <Button 
+                  variant="outline" 
+                  className="gap-2 h-auto p-4 flex-col"
+                  onClick={() => {
+                    // Create a simple worksheet content
+                    const worksheetContent = `
+Countries & Nationalities Worksheet
+
+Exercise 1: Match the countries with nationalities
+1. Germany - ___
+2. France - ___
+3. Japan - ___
+4. Brazil - ___
+5. Spain - ___
+
+Exercise 2: Write 5 sentences about different countries
+Example: I'm from Kazakhstan. I'm Kazakh.
+
+1. ________________________________
+2. ________________________________
+3. ________________________________
+4. ________________________________
+5. ________________________________
+                    `;
+                    
+                    const blob = new Blob([worksheetContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'lesson1-worksheet.txt';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                  }}
+                >
+                  <Download className="w-4 h-4" />
+                  Worksheet жүктеу
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="gap-2 h-auto p-4 flex-col"
+                  onClick={() => {
+                    const homeworkContent = `
+Homework Assignment - Lesson 1
+
+Task 1: Practice pronunciation
+- Say each country and nationality 3 times
+- Record yourself if possible
+
+Task 2: Write a short paragraph
+"My country is Kazakhstan. I'm Kazakh. I speak Kazakh and English. 
+My friend is from Germany. He's German. He speaks German and English."
+
+Task 3: Practice with family
+- Ask family members: "Where are you from?"
+- Practice the conversation
+                    `;
+                    
+                    const blob = new Blob([homeworkContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'lesson1-homework.txt';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                  }}
+                >
+                  <BookOpen className="w-4 h-4" />
+                  Үй тапсырмасы
+                </Button>
+              </div>
+            </div>
           </Card>
 
           {/* Next Lesson */}
