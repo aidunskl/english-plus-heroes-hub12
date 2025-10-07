@@ -29,7 +29,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "primary",
-      downloadUrl: "/countries-nationalities.pdf",
+      downloadUrl: "https://english-plus-heroes-hub12.vercel.app/countries-nationalities.pdf",
       isPresentation: true
     },
     {
@@ -42,7 +42,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "secondary",
-      downloadUrl: "/teacher-gulek-english-class.pdf",
+      downloadUrl: "https://english-plus-heroes-hub12.vercel.app/teacher-gulek-english-class.pdf",
       isPresentation: true
     },
     {
@@ -55,7 +55,7 @@ const Materials = () => {
       date: "2025",
       icon: Presentation,
       color: "success",
-      downloadUrl: "/present-tense-writing.pdf",
+      downloadUrl: "https://english-plus-heroes-hub12.vercel.app/present-tense-writing.pdf",
       isPresentation: true
     }
   ];

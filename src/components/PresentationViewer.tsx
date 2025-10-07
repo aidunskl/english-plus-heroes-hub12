@@ -114,13 +114,28 @@ const PresentationViewer = ({
                     <p className="text-muted-foreground mb-4">
                       Презентацияны көру үшін төмендегі батырманы басыңыз
                     </p>
-                    <Button 
-                      onClick={() => window.open(filePath, '_blank')}
-                      className="gap-2"
-                    >
-                      <Eye className="w-4 h-4" />
-                      Презентацияны ашу
-                    </Button>
+                    <div className="flex gap-2 justify-center">
+                      <Button 
+                        onClick={() => window.open(filePath, '_blank')}
+                        className="gap-2"
+                      >
+                        <Eye className="w-4 h-4" />
+                        Көру
+                      </Button>
+                      <Button 
+                        onClick={() => {
+                          const link = document.createElement('a');
+                          link.href = filePath;
+                          link.download = `${title}.pdf`;
+                          link.click();
+                        }}
+                        variant="outline"
+                        className="gap-2"
+                      >
+                        <Download className="w-4 h-4" />
+                        Жүктеу
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

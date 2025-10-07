@@ -13,6 +13,7 @@ import Videos from "./pages/Videos";
 import Feedback from "./pages/Feedback";
 import About from "./pages/About";
 import Materials from "./pages/Materials";
+import PresentationView from "./pages/PresentationView";
 import Homework from "./pages/Homework";
 // import StudentHomework from "./pages/StudentHomework";
 // import TeacherHomework from "./pages/TeacherHomework";
@@ -75,6 +76,7 @@ const App = () => (
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/about" element={<About />} />
           <Route path="/materials" element={<Materials />} />
+          <Route path="/presentation" element={<PresentationView />} />
           <Route path="/homework" element={<Homework />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
