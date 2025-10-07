@@ -19,7 +19,7 @@ const Videos = () => {
       lesson: "Lesson 1",
       description: "Елдер мен ұлттар туралы кіріспе видео. Елдердің атаулары мен ұлттықтарын үйрену.",
       src: "/videos/lesson1-countries-intro.mp4",
-      youtubeId: "dQw4w9WgXcQ", // Rick Roll as placeholder - replace with real educational video
+      youtubeId: "qyZH4U7_oEk", // Countries and Nationalities
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Easy",
       rating: 4.8,
@@ -32,7 +32,7 @@ const Videos = () => {
       lesson: "Lesson 1",
       description: "Шыққан жері туралы сұрақ қою және жауап беру. Диалогтар мен мысалдар.",
       src: "/videos/lesson1-where-are-you-from.mp4",
-      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
+      youtubeId: "c_JjRk1L4Q", // Where are you from
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Easy",
       rating: 4.9,
@@ -45,7 +45,7 @@ const Videos = () => {
       lesson: "Lesson 2",
       description: "Әлемдегі тілдер туралы видео. Тілдердің таралуы мен маңызы.",
       src: "/videos/lesson2-languages-around-world.mp4",
-      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
+      youtubeId: "V16oh3eJ620", // Languages Around the World
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
       rating: 4.7,
@@ -58,7 +58,7 @@ const Videos = () => {
       lesson: "Lesson 3",
       description: "Present Simple шағының ережелері. Аффирматив, негатив және сұраулы формалар.",
       src: "/videos/lesson3-present-simple-grammar.mp4",
-      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
+      youtubeId: "nvVdIJ0las0", // Present Simple Grammar
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
       rating: 4.6,
@@ -71,7 +71,7 @@ const Videos = () => {
       lesson: "Lesson 3",
       description: "Сұраулы және болымсыз формалар. Do/Does қолдану ережелері.",
       src: "/videos/lesson3-present-simple-questions.mp4",
-      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
+      youtubeId: "htX6frsv1Wc", // Present Simple Questions
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
       rating: 4.5,
@@ -84,7 +84,7 @@ const Videos = () => {
       lesson: "Lesson 4",
       description: "Космополитикалық қала туралы видео тур. Әртүрлі мәдениеттердің қосылуы.",
       src: "/videos/lesson4-cosmopolitan-city-tour.mp4",
-      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
+      youtubeId: "GBAPw25_J5E", // Cosmopolitan City
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Easy",
       rating: 4.8,
