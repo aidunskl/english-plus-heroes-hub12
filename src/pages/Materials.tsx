@@ -71,8 +71,8 @@ const Materials = () => {
       title: "Countries and Nationalities - Презентация",
       description: "Елдер мен ұлттар туралы толық презентация",
       type: "PDF",
-      size: "2.1 MB",
-      pages: "15 слайд",
+      size: "338 KB",
+      pages: "Мультимедиа слайдтар",
       author: "Teacher Samal",
       date: "2025",
       icon: Presentation,
@@ -81,29 +81,16 @@ const Materials = () => {
       isPresentation: true
     },
     {
-      title: "Present Simple Grammar - Презентация",
-      description: "Present Simple шағының толық презентациясы",
+      title: "Teacher Gulek's English Class - Презентация",
+      description: "Ағылшын тілі сабағының толық презентациясы",
       type: "PDF",
-      size: "1.8 MB",
-      pages: "12 слайд",
+      size: "7.6 MB",
+      pages: "Көпмедиа слайдтар",
       author: "Teacher Samal",
       date: "2025",
       icon: Presentation,
       color: "secondary",
-      downloadUrl: "/presentations/present-simple-grammar.pdf",
-      isPresentation: true
-    },
-    {
-      title: "Languages Around the World - Презентация",
-      description: "Әлемдегі тілдер туралы презентация",
-      type: "PDF",
-      size: "2.5 MB",
-      pages: "18 слайд",
-      author: "Teacher Samal",
-      date: "2025",
-      icon: Presentation,
-      color: "accent",
-      downloadUrl: "/presentations/languages-around-world.pdf",
+      downloadUrl: "/presentations/Teacher Gulek's English Class.pdf.pdf",
       isPresentation: true
     }
   ];
