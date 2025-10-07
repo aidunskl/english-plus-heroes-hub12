@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
+import PresentationViewer from "@/components/PresentationViewer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Download, BookOpen, Users, Calendar, File } from "lucide-react";
+import { FileText, Download, BookOpen, Users, Calendar, File, Presentation } from "lucide-react";
 
 const Materials = () => {
   const materials = [
@@ -65,6 +66,45 @@ const Materials = () => {
       icon: BookOpen,
       color: "primary",
       downloadUrl: "https://www.canva.com/design/DAG0t-dCGHU/-BaLmowDJvC-uYHbDSUE0Q/edit"
+    },
+    {
+      title: "Countries and Nationalities - Презентация",
+      description: "Елдер мен ұлттар туралы толық презентация",
+      type: "PDF",
+      size: "2.1 MB",
+      pages: "15 слайд",
+      author: "Teacher Samal",
+      date: "2025",
+      icon: Presentation,
+      color: "primary",
+      downloadUrl: "/presentations/countries-nationalities.pdf",
+      isPresentation: true
+    },
+    {
+      title: "Present Simple Grammar - Презентация",
+      description: "Present Simple шағының толық презентациясы",
+      type: "PDF",
+      size: "1.8 MB",
+      pages: "12 слайд",
+      author: "Teacher Samal",
+      date: "2025",
+      icon: Presentation,
+      color: "secondary",
+      downloadUrl: "/presentations/present-simple-grammar.pdf",
+      isPresentation: true
+    },
+    {
+      title: "Languages Around the World - Презентация",
+      description: "Әлемдегі тілдер туралы презентация",
+      type: "PDF",
+      size: "2.5 MB",
+      pages: "18 слайд",
+      author: "Teacher Samal",
+      date: "2025",
+      icon: Presentation,
+      color: "accent",
+      downloadUrl: "/presentations/languages-around-world.pdf",
+      isPresentation: true
     }
   ];
 
@@ -97,6 +137,26 @@ const Materials = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {materials.map((material, index) => {
               const Icon = material.icon;
+              
+              // Если это презентация, используем PresentationViewer
+              if (material.isPresentation) {
+                return (
+                  <PresentationViewer
+                    key={index}
+                    title={material.title}
+                    description={material.description}
+                    author={material.author}
+                    date={material.date}
+                    filePath={material.downloadUrl}
+                    lesson={material.type}
+                    pages={parseInt(material.pages?.split(' ')[0] || '0')}
+                    size={material.size}
+                    className="group relative overflow-hidden hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-gradient-card"
+                  />
+                );
+              }
+              
+              // Обычные материалы
               return (
                 <Card key={index} className="group relative overflow-hidden hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-gradient-card">
                   <div className="p-6">
