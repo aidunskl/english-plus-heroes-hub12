@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
 import VideoPlayer from "@/components/VideoPlayer";
+import YouTubePlayer from "@/components/YouTubePlayer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Video, Play, Clock, BookOpen, Star, Download } from "lucide-react";
+import { Video, Play, Clock, BookOpen, Star, Download, Youtube } from "lucide-react";
 import { useState } from "react";
 
 const Videos = () => {
@@ -18,9 +19,11 @@ const Videos = () => {
       lesson: "Lesson 1",
       description: "Елдер мен ұлттар туралы кіріспе видео. Елдердің атаулары мен ұлттықтарын үйрену.",
       src: "/videos/lesson1-countries-intro.mp4",
+      youtubeId: "dQw4w9WgXcQ", // Rick Roll as placeholder - replace with real educational video
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Easy",
-      rating: 4.8
+      rating: 4.8,
+      type: "youtube"
     },
     {
       id: "where-are-you-from",
@@ -29,9 +32,11 @@ const Videos = () => {
       lesson: "Lesson 1",
       description: "Шыққан жері туралы сұрақ қою және жауап беру. Диалогтар мен мысалдар.",
       src: "/videos/lesson1-where-are-you-from.mp4",
+      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Easy",
-      rating: 4.9
+      rating: 4.9,
+      type: "youtube"
     },
     {
       id: "languages-world",
@@ -40,9 +45,11 @@ const Videos = () => {
       lesson: "Lesson 2",
       description: "Әлемдегі тілдер туралы видео. Тілдердің таралуы мен маңызы.",
       src: "/videos/lesson2-languages-around-world.mp4",
+      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
-      rating: 4.7
+      rating: 4.7,
+      type: "youtube"
     },
     {
       id: "present-simple-grammar",
@@ -51,9 +58,11 @@ const Videos = () => {
       lesson: "Lesson 3",
       description: "Present Simple шағының ережелері. Аффирматив, негатив және сұраулы формалар.",
       src: "/videos/lesson3-present-simple-grammar.mp4",
+      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
-      rating: 4.6
+      rating: 4.6,
+      type: "youtube"
     },
     {
       id: "present-simple-questions",
@@ -62,9 +71,11 @@ const Videos = () => {
       lesson: "Lesson 3",
       description: "Сұраулы және болымсыз формалар. Do/Does қолдану ережелері.",
       src: "/videos/lesson3-present-simple-questions.mp4",
+      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
-      rating: 4.5
+      rating: 4.5,
+      type: "youtube"
     },
     {
       id: "cosmopolitan-city",
@@ -73,9 +84,11 @@ const Videos = () => {
       lesson: "Lesson 4",
       description: "Космополитикалық қала туралы видео тур. Әртүрлі мәдениеттердің қосылуы.",
       src: "/videos/lesson4-cosmopolitan-city-tour.mp4",
+      youtubeId: "dQw4w9WgXcQ", // Replace with real educational video
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Easy",
-      rating: 4.8
+      rating: 4.8,
+      type: "youtube"
     }
   ];
 
@@ -121,15 +134,26 @@ const Videos = () => {
               {(() => {
                 const video = videos.find(v => v.id === selectedVideo);
                 return video ? (
-                  <VideoPlayer
-                    src={video.src}
-                    title={video.title}
-                    description={video.description}
-                    duration={video.duration}
-                    lesson={video.lesson}
-                    thumbnail={video.thumbnail}
-                    className="mb-4"
-                  />
+                  video.type === "youtube" ? (
+                    <YouTubePlayer
+                      videoId={video.youtubeId}
+                      title={video.title}
+                      description={video.description}
+                      duration={video.duration}
+                      lesson={video.lesson}
+                      className="mb-4"
+                    />
+                  ) : (
+                    <VideoPlayer
+                      src={video.src}
+                      title={video.title}
+                      description={video.description}
+                      duration={video.duration}
+                      lesson={video.lesson}
+                      thumbnail={video.thumbnail}
+                      className="mb-4"
+                    />
+                  )
                 ) : null;
               })()}
               <Button 
@@ -198,21 +222,33 @@ const Videos = () => {
                         className="gap-2 flex-1"
                         onClick={() => setSelectedVideo(video.id)}
                       >
-                        <Play className="w-4 h-4" />
+                        {video.type === "youtube" ? (
+                          <Youtube className="w-4 h-4" />
+                        ) : (
+                          <Play className="w-4 h-4" />
+                        )}
                         Көру
                       </Button>
                       <Button 
                         variant="ghost" 
                         size="sm"
                         onClick={() => {
-                          // Create a download link for the video
-                          const link = document.createElement('a');
-                          link.href = video.src;
-                          link.download = `${video.title}.mp4`;
-                          link.click();
+                          if (video.type === "youtube") {
+                            window.open(`https://www.youtube.com/watch?v=${video.youtubeId}`, '_blank');
+                          } else {
+                            // Create a download link for the video
+                            const link = document.createElement('a');
+                            link.href = video.src;
+                            link.download = `${video.title}.mp4`;
+                            link.click();
+                          }
                         }}
                       >
-                        <Download className="w-4 h-4" />
+                        {video.type === "youtube" ? (
+                          <Youtube className="w-4 h-4" />
+                        ) : (
+                          <Download className="w-4 h-4" />
+                        )}
                       </Button>
                     </div>
                   </div>
