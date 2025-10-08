@@ -55,6 +55,18 @@ const Materials = () => {
       color: "success",
       downloadUrl: "https://www.canva.com/design/DAG0t_Z18cg/pbchdD6tGH-P3lDaHPz3hg/edit?utm_content=DAG0t_Z18cg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
     },
+    {
+      title: "English Presentation",
+      description: "Ағылшын тілі презентациясы",
+      type: "Canva",
+      size: "Онлайн",
+      pages: "Интерактивті слайдтар",
+      author: "Teacher Sholpan",
+      date: "2025",
+      icon: BookOpen,
+      color: "warning",
+      downloadUrl: "https://www.canva.com/design/DAG0tvBcbaI/ixi4seOnSJiaRAl6IBD0zA/edit?utm_content=DAG0tvBcbaI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    },
   ];
 
   const typeColors = {
