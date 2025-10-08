@@ -122,10 +122,11 @@ const Lesson2 = () => {
                   <p className="mb-2"><strong>B:</strong> "So, do you speak Spanish?"</p>
                   <p><strong>A:</strong> "Yes, a little."</p>
                 </div>
-                <Button variant="outline" className="gap-2">
-                  <Volume2 className="w-4 h-4" />
-                  Аудио тыңдау
-                </Button>
+                <SpeechPlayer 
+                  text="I'm from Spain. So, do you speak Spanish? Yes, a little."
+                  title="Listening Dialogue - Pronunciation"
+                  className="mb-4"
+                />
               </div>
             </div>
           </Card>
