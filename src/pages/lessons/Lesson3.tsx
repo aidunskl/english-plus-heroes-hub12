@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
+import AudioPlayer from "@/components/AudioPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MessageCircle, BookOpen, CheckCircle2, Download, AlertCircle } from "lucide-react";
+import { MessageCircle, BookOpen, CheckCircle2, Download, AlertCircle, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lesson3 = () => {
@@ -47,6 +48,22 @@ const Lesson3 = () => {
                 </div>
               ))}
             </div>
+          </Card>
+
+          {/* Audio Section */}
+          <Card className="p-6 mb-8 bg-gradient-card">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Volume2 className="w-6 h-6 text-primary" />
+              Аудио материал
+            </h2>
+            <AudioPlayer 
+              src="/audio/lesson3-grammar.mp3"
+              title="Present Simple Grammar - Pronunciation"
+              className="mb-4"
+            />
+            <p className="text-sm text-muted-foreground">
+              Тыңдап, Present Simple грамматикасының дұрыс айтылуын үйреніңіз
+            </p>
           </Card>
 
           {/* Grammar Rules - Affirmative */}
