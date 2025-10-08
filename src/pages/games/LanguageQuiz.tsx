@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, RotateCcw, Trophy, Timer, Globe, CheckCircle, XCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useLessonReturn } from "@/hooks/useLessonReturn";
 
 interface LanguageQuestion {
   id: number;
@@ -101,6 +102,7 @@ const languageQuestions: LanguageQuestion[] = [
 
 const LanguageQuiz = () => {
   const navigate = useNavigate();
+  const { getReturnPath } = useLessonReturn();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(0);
@@ -202,7 +204,7 @@ const LanguageQuiz = () => {
         <div className="max-w-4xl mx-auto">
           <Button
             variant="ghost"
-            onClick={() => navigate("/games")}
+            onClick={() => navigate(getReturnPath())}
             className="mb-6"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

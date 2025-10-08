@@ -163,7 +163,7 @@ const CountriesMatching = () => {
         <div className="max-w-6xl mx-auto">
           <Button
             variant="ghost"
-            onClick={() => navigate("/games")}
+            onClick={() => navigate(getReturnPath())}
             className="mb-6"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
