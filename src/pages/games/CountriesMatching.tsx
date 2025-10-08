@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, RotateCcw, Trophy, Timer, Globe, Flag } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useLessonReturn } from "@/hooks/useLessonReturn";
 
 interface CountryPair {
   id: number;
@@ -40,6 +41,8 @@ type GameCard = {
 
 const CountriesMatching = () => {
   const navigate = useNavigate();
+  const { fromLesson, getReturnPath, getReturnText } = useLessonReturn();
+  
   const [cards, setCards] = useState<GameCard[]>([]);
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [matches, setMatches] = useState(0);
@@ -206,10 +209,22 @@ const CountriesMatching = () => {
               <p className="text-lg mb-4">
                 Сіз барлық жұптарды {formatTime(time)} ішінде {attempts} әрекетпен таптыңыз!
               </p>
-              <Button onClick={initializeGame} className="gap-2">
-                <RotateCcw className="w-4 h-4" />
-                Қайта ойнау
-              </Button>
+              <div className="flex gap-3 justify-center">
+                <Button onClick={initializeGame} className="gap-2">
+                  <RotateCcw className="w-4 h-4" />
+                  Қайта ойнау
+                </Button>
+                {fromLesson && (
+                  <Button 
+                    variant="outline" 
+                    onClick={() => navigate(getReturnPath())}
+                    className="gap-2"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    {getReturnText()}
+                  </Button>
+                )}
+              </div>
             </Card>
           )}
 

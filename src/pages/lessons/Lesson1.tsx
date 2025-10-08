@@ -213,7 +213,7 @@ const Lesson1 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/countries-matching')}
+                      onClick={() => navigate('/games/countries-matching?from=lesson1')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау

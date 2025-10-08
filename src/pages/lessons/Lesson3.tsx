@@ -186,7 +186,7 @@ const Lesson3 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/present-simple-challenge')}
+                      onClick={() => navigate('/games/present-simple-challenge?from=lesson3')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау
@@ -206,7 +206,7 @@ const Lesson3 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/educaplay-present-simple-quiz')}
+                      onClick={() => navigate('/games/educaplay-present-simple-quiz?from=lesson3')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау

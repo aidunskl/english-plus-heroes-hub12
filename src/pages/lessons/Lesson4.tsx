@@ -199,7 +199,7 @@ const Lesson4 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/city-description-builder')}
+                      onClick={() => navigate('/games/city-description-builder?from=lesson4')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Тестті бастау
@@ -219,7 +219,7 @@ const Lesson4 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/vocabulary-flashcards')}
+                      onClick={() => navigate('/games/vocabulary-flashcards?from=lesson4')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау

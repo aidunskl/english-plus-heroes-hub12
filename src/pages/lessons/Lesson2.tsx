@@ -165,7 +165,7 @@ const Lesson2 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/language-quiz')}
+                      onClick={() => navigate('/games/language-quiz?from=lesson2')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Квизді бастау
@@ -186,7 +186,7 @@ const Lesson2 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => navigate('/games/guess-the-country')}
+                      onClick={() => navigate('/games/guess-the-country?from=lesson2')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Ойынды бастау
