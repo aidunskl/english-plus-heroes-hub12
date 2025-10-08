@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, BookOpen, CheckCircle2, Download, AlertCircle, Volume2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Lesson3 = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -181,7 +183,11 @@ const Lesson3 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Fill in the Blanks</h3>
                     <p className="text-muted-foreground mb-4">Дұрыс формаларды толтыр (do/does, don't/doesn't)</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => navigate('/games/present-simple-challenge')}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау
                     </Button>
@@ -197,7 +203,11 @@ const Lesson3 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Correct the Mistakes</h3>
                     <p className="text-muted-foreground mb-4">Қателерді түзет</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => navigate('/games/educaplay-present-simple-quiz')}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау
                     </Button>

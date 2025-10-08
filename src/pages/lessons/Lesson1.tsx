@@ -4,10 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Globe, BookOpen, CheckCircle2, Download, ArrowRight, Volume2, Play } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Lesson1 = () => {
+  const navigate = useNavigate();
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
@@ -212,7 +213,7 @@ const Lesson1 = () => {
                     <Button 
                       variant="outline" 
                       className="gap-2"
-                      onClick={() => window.location.href = '/games/countries-matching'}
+                      onClick={() => navigate('/games/countries-matching')}
                     >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау

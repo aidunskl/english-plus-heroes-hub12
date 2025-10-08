@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Languages, BookOpen, CheckCircle2, Download, ArrowRight, Volume2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Lesson2 = () => {
+  const navigate = useNavigate();
+  
   const languages = [
     { country: "Spain", language: "Spanish", flag: "🇪🇸" },
     { country: "Germany", language: "German", flag: "🇩🇪" },
@@ -145,7 +147,11 @@ const Lesson2 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Language Quiz</h3>
                     <p className="text-muted-foreground mb-4">Қай елде қай тілде сөйлейді?</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => navigate('/games/language-quiz')}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Квизді бастау
                     </Button>
@@ -162,7 +168,11 @@ const Lesson2 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Guessing Game</h3>
                     <p className="text-muted-foreground mb-4">"Who am I?" - жасырын елді табу ойыны</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => navigate('/games/guess-the-country')}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Ойынды бастау
                     </Button>
