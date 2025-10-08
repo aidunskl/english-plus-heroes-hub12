@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Target, CheckCircle2, Download, Trophy, Star, Users, Volume2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Lesson5 = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -79,7 +81,11 @@ const Lesson5 = () => {
                 <p className="text-muted-foreground mb-4">
                   Барлық тақырыптар бойынша интерактивті квиз. 20 сұрақ, 30 минут.
                 </p>
-                <Button size="lg" className="gap-2">
+                <Button 
+                  size="lg" 
+                  className="gap-2"
+                  onClick={() => navigate('/games')}
+                >
                   <Target className="w-5 h-5" />
                   Квизді бастау
                 </Button>

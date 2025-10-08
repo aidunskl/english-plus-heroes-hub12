@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, CheckCircle2, Download, Building2, Volume2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Lesson4 = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -194,7 +196,11 @@ const Lesson4 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Reading Comprehension Quiz</h3>
                     <p className="text-muted-foreground mb-4">Мәтін бойынша интерактивті тест</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => navigate('/games/city-description-builder')}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Тестті бастау
                     </Button>
@@ -210,7 +216,11 @@ const Lesson4 = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">Vocabulary Matching</h3>
                     <p className="text-muted-foreground mb-4">Сөздерді аудармаларымен сәйкестендір</p>
-                    <Button variant="outline" className="gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="gap-2"
+                      onClick={() => navigate('/games/vocabulary-flashcards')}
+                    >
                       <BookOpen className="w-4 h-4" />
                       Жаттығуды бастау
                     </Button>
