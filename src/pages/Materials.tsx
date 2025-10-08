@@ -20,44 +20,41 @@ const Materials = () => {
       downloadUrl: "https://www.canva.com/design/DAG0t-dCGHU/-BaLmowDJvC-uYHbDSUE0Q/edit"
     },
     {
-      title: "Countries and Nationalities - Презентация",
-      description: "Елдер мен ұлттар туралы толық презентация",
-      type: "PDF",
-      size: "338 KB",
-      pages: "Мультимедиа слайдтар",
-      author: "Teacher Samal",
+      title: "Grammar and Vocabulary",
+      description: "Грамматика және сөздік қоры презентациясы",
+      type: "Canva",
+      size: "Онлайн",
+      pages: "Интерактивті слайдтар",
+      author: "Teacher Anel",
       date: "2025",
-      icon: Presentation,
-      color: "primary",
-      downloadUrl: "/countries-nationalities.pdf",
-      isPresentation: true
-    },
-    {
-      title: "Teacher Gulek's English Class - Презентация",
-      description: "Ағылшын тілі сабағының толық презентациясы",
-      type: "PDF",
-      size: "7.6 MB",
-      pages: "Көпмедиа слайдтар",
-      author: "Teacher Samal",
-      date: "2025",
-      icon: Presentation,
+      icon: BookOpen,
       color: "secondary",
-      downloadUrl: "/teacher-gulek-english-class.pdf",
-      isPresentation: true
+      downloadUrl: "https://www.canva.com/design/DAG1Ih_qz-k/qzojbAKG4kuliv4LY9KhDw/edit?utm_content=DAG1Ih_qz-k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
     },
     {
-      title: "Present Tense Writing - Презентация",
-      description: "Present tense жазу ережелері мен жаттығулары",
-      type: "PDF",
-      size: "2.1 MB",
-      pages: "Грамматика слайдтар",
-      author: "Teacher Samal",
+      title: "Speaking and Communication",
+      description: "Сөйлеу және коммуникация дағдылары презентациясы",
+      type: "Canva",
+      size: "Онлайн",
+      pages: "Интерактивті слайдтар",
+      author: "Teacher Gulzhanat",
       date: "2025",
-      icon: Presentation,
+      icon: BookOpen,
+      color: "accent",
+      downloadUrl: "https://www.canva.com/design/DAG0tcnWxIA/-pB97dQVJaf8b1jRT6en5A/edit?utm_content=DAG0tcnWxIA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    },
+    {
+      title: "Reading and Writing Skills",
+      description: "Оқу және жазу дағдылары презентациясы",
+      type: "Canva",
+      size: "Онлайн",
+      pages: "Интерактивті слайдтар",
+      author: "Teacher Altynai",
+      date: "2025",
+      icon: BookOpen,
       color: "success",
-      downloadUrl: "/present-tense-writing.pdf",
-      isPresentation: true
-    }
+      downloadUrl: "https://www.canva.com/design/DAG0t_Z18cg/pbchdD6tGH-P3lDaHPz3hg/edit?utm_content=DAG0t_Z18cg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    },
   ];
 
   const typeColors = {
