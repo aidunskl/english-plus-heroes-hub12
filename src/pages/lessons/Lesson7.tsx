@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, HeartHandshake, CheckCircle2, Volume2 } from "lucide-react";
@@ -54,8 +54,8 @@ const Lesson7 = () => {
             <Volume2 className="w-6 h-6 text-primary" />
             Аудио материал
           </h2>
-          <AudioPlayer 
-            src="/audio/lesson7-reading.mp3"
+          <SpeechPlayer 
+            text="Dr. Sarah is a brave doctor. She helps sick children. She works in a hospital. She is kind and helpful. She is a hero."
             title="Reading Comprehension - Pronunciation"
             className="mb-4"
           />

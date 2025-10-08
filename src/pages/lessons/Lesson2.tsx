@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -67,8 +67,8 @@ const Lesson2 = () => {
               <Volume2 className="w-6 h-6 text-primary" />
               Аудио материал
             </h2>
-            <AudioPlayer 
-              src="/audio/lesson2-languages.mp3"
+            <SpeechPlayer 
+              text="Spanish, German, French, Chinese, Japanese, Kazakh, Russian, Portuguese, Italian"
               title="Languages around the world - Pronunciation"
               className="mb-4"
             />

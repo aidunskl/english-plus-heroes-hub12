@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -56,8 +56,8 @@ const Lesson3 = () => {
               <Volume2 className="w-6 h-6 text-primary" />
               Аудио материал
             </h2>
-            <AudioPlayer 
-              src="/audio/lesson3-grammar.mp3"
+            <SpeechPlayer 
+              text="I live in Almaty. You speak English. We study hard. They like pizza. He lives in Astana. She works in a hospital. It rains a lot."
               title="Present Simple Grammar - Pronunciation"
               className="mb-4"
             />

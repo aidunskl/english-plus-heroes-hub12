@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Trophy, CheckCircle2, Volume2 } from "lucide-react";
@@ -54,8 +54,8 @@ const Lesson8 = () => {
             <Volume2 className="w-6 h-6 text-primary" />
             Аудио материал
           </h2>
-          <AudioPlayer 
-            src="/audio/lesson8-writing.mp3"
+          <SpeechPlayer 
+            text="My hero is my teacher. She is kind and helpful. She teaches us English. She helps us learn. She is brave and strong. I want to be like her."
             title="Writing Skills - Pronunciation"
             className="mb-4"
           />

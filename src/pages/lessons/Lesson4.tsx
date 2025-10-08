@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -56,8 +56,8 @@ const Lesson4 = () => {
               <Volume2 className="w-6 h-6 text-primary" />
               Аудио материал
             </h2>
-            <AudioPlayer 
-              src="/audio/lesson4-cities.mp3"
+            <SpeechPlayer 
+              text="New York is a cosmopolitan city. London has many international students. Tokyo is very modern. Paris is beautiful. Almaty is growing fast."
               title="Cosmopolitan Cities - Pronunciation"
               className="mb-4"
             />

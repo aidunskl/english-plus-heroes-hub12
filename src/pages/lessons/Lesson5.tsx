@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -93,8 +93,8 @@ const Lesson5 = () => {
               <Volume2 className="w-6 h-6 text-primary" />
               Аудио материал
             </h2>
-            <AudioPlayer 
-              src="/audio/lesson5-vocabulary.mp3"
+            <SpeechPlayer 
+              text="Countries, nationalities, languages, cities, grammar, vocabulary, conversation, reading, writing, heroes"
               title="Vocabulary Review - Pronunciation"
               className="mb-4"
             />

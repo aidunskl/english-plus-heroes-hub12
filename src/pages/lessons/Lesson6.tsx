@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Users, CheckCircle2, Volume2 } from "lucide-react";
@@ -61,8 +61,8 @@ const Lesson6 = () => {
             <Volume2 className="w-6 h-6 text-primary" />
             Аудио материал
           </h2>
-          <AudioPlayer 
-            src="/audio/lesson6-conversation.mp3"
+          <SpeechPlayer 
+            text="Sarah teaches English in Kenya. Tom builds houses in Peru. Maria helps animals in Brazil. Volunteers work around the world."
             title="Volunteers Conversation - Pronunciation"
             className="mb-4"
           />

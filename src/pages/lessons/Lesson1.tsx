@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import AudioPlayer from "@/components/AudioPlayer";
+import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -91,8 +91,8 @@ const Lesson1 = () => {
               <Volume2 className="w-6 h-6 text-primary" />
               Аудио материал
             </h2>
-            <AudioPlayer 
-              src="/audio/lesson1-countries.mp3"
+            <SpeechPlayer 
+              text="Germany - German, France - French, Poland - Polish, Kazakhstan - Kazakh, China - Chinese, Brazil - Brazilian, Japan - Japanese, Spain - Spanish"
               title="Countries and Nationalities - Pronunciation"
               className="mb-4"
             />
