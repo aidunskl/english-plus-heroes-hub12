@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, HeartHandshake, CheckCircle2, Volume2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, HeartHandshake, CheckCircle2, Volume2, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lesson7 = () => {
@@ -80,8 +80,23 @@ const Lesson7 = () => {
             ].map((item, index) => (
               <div key={index} className="p-4 rounded-lg bg-muted/50 text-center">
                 <div className="text-3xl mb-2">{item.emoji}</div>
-                <div className="font-bold text-primary">{item.word}</div>
-                <div className="text-sm text-muted-foreground">{item.translation}</div>
+                <div className="font-bold text-primary mb-2">{item.word}</div>
+                <div className="text-sm text-muted-foreground mb-3">{item.translation}</div>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="gap-1 text-xs"
+                  onClick={() => {
+                    const utterance = new SpeechSynthesisUtterance(item.word);
+                    utterance.lang = 'en-US';
+                    utterance.rate = 0.8;
+                    utterance.pitch = 1;
+                    speechSynthesis.speak(utterance);
+                  }}
+                >
+                  <Play className="w-3 h-3" />
+                  Айту
+                </Button>
               </div>
             ))}
           </div>
