@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
+import AudioPlayer from "@/components/AudioPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Users, CheckCircle2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Users, CheckCircle2, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lesson6 = () => {
@@ -52,6 +53,22 @@ const Lesson6 = () => {
               </ul>
             </div>
           </div>
+        </Card>
+
+        {/* Audio Section */}
+        <Card className="p-6 mb-8 bg-gradient-card">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Volume2 className="w-6 h-6 text-primary" />
+            Аудио материал
+          </h2>
+          <AudioPlayer 
+            src="/audio/lesson6-conversation.mp3"
+            title="Volunteers Conversation - Pronunciation"
+            className="mb-4"
+          />
+          <p className="text-sm text-muted-foreground">
+            Тыңдап, волонтерлік қызмет туралы диалогтың дұрыс айтылуын үйреніңіз
+          </p>
         </Card>
 
         <Card className="p-6 mb-6">

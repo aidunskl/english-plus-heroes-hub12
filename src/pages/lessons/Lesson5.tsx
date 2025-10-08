@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
+import AudioPlayer from "@/components/AudioPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Target, CheckCircle2, Download, Trophy, Star, Users } from "lucide-react";
+import { Target, CheckCircle2, Download, Trophy, Star, Users, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lesson5 = () => {
@@ -84,6 +85,22 @@ const Lesson5 = () => {
                 </Button>
               </div>
             </div>
+          </Card>
+
+          {/* Audio Section */}
+          <Card className="p-6 mb-8 bg-gradient-card">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Volume2 className="w-6 h-6 text-primary" />
+              Аудио материал
+            </h2>
+            <AudioPlayer 
+              src="/audio/lesson5-vocabulary.mp3"
+              title="Vocabulary Review - Pronunciation"
+              className="mb-4"
+            />
+            <p className="text-sm text-muted-foreground">
+              Тыңдап, сөздік қорының дұрыс айтылуын қайталаңыз
+            </p>
           </Card>
 
           {/* Final Project */}

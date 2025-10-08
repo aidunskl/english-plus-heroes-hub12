@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
+import AudioPlayer from "@/components/AudioPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, Trophy, CheckCircle2 } from "lucide-react";
+import { ChevronLeft, Trophy, CheckCircle2, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Lesson8 = () => {
@@ -45,6 +46,22 @@ const Lesson8 = () => {
               </ul>
             </div>
           </div>
+        </Card>
+
+        {/* Audio Section */}
+        <Card className="p-6 mb-8 bg-gradient-card">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Volume2 className="w-6 h-6 text-primary" />
+            Аудио материал
+          </h2>
+          <AudioPlayer 
+            src="/audio/lesson8-writing.mp3"
+            title="Writing Skills - Pronunciation"
+            className="mb-4"
+          />
+          <p className="text-sm text-muted-foreground">
+            Тыңдап, жазу дағдыларының дұрыс айтылуын үйреніңіз
+          </p>
         </Card>
 
         <Card className="p-6 mb-6">
