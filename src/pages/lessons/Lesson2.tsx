@@ -3,7 +3,7 @@ import SpeechPlayer from "@/components/SpeechPlayer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Languages, BookOpen, CheckCircle2, Download, ArrowRight, Volume2 } from "lucide-react";
+import { Languages, BookOpen, CheckCircle2, Download, ArrowRight, Volume2, Play } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Lesson2 = () => {
@@ -84,12 +84,27 @@ const Lesson2 = () => {
             <h2 className="text-2xl font-bold mb-6">🌍 World Languages</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {languages.map((item, index) => (
-                <Card key={index} className="p-4 hover:shadow-medium transition-all hover:-translate-y-1 bg-gradient-card group cursor-pointer">
+                <Card key={index} className="p-4 hover:shadow-medium transition-all hover:-translate-y-1 bg-gradient-card group">
                   <div className="text-4xl mb-2 text-center group-hover:scale-110 transition-transform">
                     {item.flag}
                   </div>
                   <h3 className="font-bold text-center mb-1">{item.country}</h3>
-                  <p className="text-sm text-secondary text-center font-medium">{item.language}</p>
+                  <p className="text-sm text-secondary text-center font-medium mb-3">{item.language}</p>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="w-full gap-1 text-xs"
+                    onClick={() => {
+                      const utterance = new SpeechSynthesisUtterance(item.language);
+                      utterance.lang = 'en-US';
+                      utterance.rate = 0.8;
+                      utterance.pitch = 1;
+                      speechSynthesis.speak(utterance);
+                    }}
+                  >
+                    <Play className="w-3 h-3" />
+                    Айту
+                  </Button>
                 </Card>
               ))}
             </div>

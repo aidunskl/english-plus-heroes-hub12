@@ -2,11 +2,13 @@ import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Gamepad2, Star, Clock, Users } from "lucide-react";
+import { Gamepad2, Star, Clock, Users, Filter } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Games = () => {
   const navigate = useNavigate();
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>("All");
   
   const games = [
     {
@@ -125,6 +127,12 @@ const Games = () => {
     Hard: "bg-destructive/10 text-destructive"
   };
 
+  const difficulties = ["All", "Easy", "Medium", "Hard"];
+  
+  const filteredGames = selectedDifficulty === "All" 
+    ? games 
+    : games.filter(game => game.difficulty === selectedDifficulty);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -144,8 +152,42 @@ const Games = () => {
             </p>
           </div>
 
+          {/* Difficulty Filter */}
+          <div className="mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <Filter className="w-5 h-5 text-muted-foreground" />
+              <span className="text-lg font-semibold">Сложность:</span>
+              <div className="flex gap-2">
+                {difficulties.map((difficulty) => (
+                  <Button
+                    key={difficulty}
+                    variant={selectedDifficulty === difficulty ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedDifficulty(difficulty)}
+                    className="gap-2"
+                  >
+                    {difficulty === "All" ? "Барлығы" : difficulty}
+                    {difficulty !== "All" && (
+                      <Badge variant="secondary" className="ml-1">
+                        {games.filter(game => game.difficulty === difficulty).length}
+                      </Badge>
+                    )}
+                  </Button>
+                ))}
+              </div>
+            </div>
+            
+            {/* Games Count */}
+            <div className="text-center text-muted-foreground">
+              {selectedDifficulty === "All" 
+                ? `Барлығы ${games.length} ойын`
+                : `${filteredGames.length} ойын (${selectedDifficulty} деңгейі)`
+              }
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {games.map((game, index) => (
+            {filteredGames.map((game, index) => (
               <Card key={index} className="group relative overflow-hidden hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-gradient-card">
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
