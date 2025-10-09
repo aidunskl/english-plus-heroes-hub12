@@ -161,14 +161,14 @@ const CountriesMatching = () => {
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <Button
-            variant="ghost"
-            onClick={() => navigate(getReturnPath())}
-            className="mb-6"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Артқа
-          </Button>
+           <Button
+             variant="ghost"
+             onClick={() => navigate("/games")}
+             className="mb-6"
+           >
+             <ArrowLeft className="w-4 h-4 mr-2" />
+             Артқа
+           </Button>
 
           <Card className="p-8 mb-6 bg-gradient-card">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">

@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { ArrowLeft, RotateCcw, Trophy, Timer, MapPin, CheckCircle, XCircle, Lightbulb } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { useLessonReturn } from "@/hooks/useLessonReturn";
 
 interface CountryRiddle {
   id: number;
@@ -136,7 +135,6 @@ const countryRiddles: CountryRiddle[] = [
 
 const GuessTheCountry = () => {
   const navigate = useNavigate();
-  const { getReturnPath } = useLessonReturn();
   const [currentRiddle, setCurrentRiddle] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
   const [score, setScore] = useState(0);
@@ -234,7 +232,7 @@ const GuessTheCountry = () => {
         <div className="max-w-4xl mx-auto">
           <Button
             variant="ghost"
-            onClick={() => navigate(getReturnPath())}
+            onClick={() => navigate("/games")}
             className="mb-6"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
