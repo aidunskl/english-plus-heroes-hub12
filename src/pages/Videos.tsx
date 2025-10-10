@@ -89,6 +89,19 @@ const Videos = () => {
       difficulty: "Easy",
       rating: 4.8,
       type: "youtube"
+    },
+    {
+      id: "non-verbal-language",
+      title: "Non verbal language",
+      duration: "6:15",
+      lesson: "Additional",
+      description: "Сөзсіз коммуникация туралы видео. Жесттер, мимика және дене тілі.",
+      src: "/videos/non-verbal-language.mp4",
+      youtubeId: "kipIJ3gpcbg", // Non verbal language
+      thumbnail: "/assets/hero-background.jpg",
+      difficulty: "Medium",
+      rating: 4.7,
+      type: "youtube"
     }
   ];
 
