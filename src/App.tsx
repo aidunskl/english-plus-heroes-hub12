@@ -47,6 +47,7 @@ import GulzhanatEducaplay from "./pages/games/GulzhanatEducaplay";
 import GulzhanatInteractyEasy from "./pages/games/GulzhanatInteractyEasy";
 import GulzhanatInteractyMedium from "./pages/games/GulzhanatInteractyMedium";
 import GulzhanatPuzzelCrossword from "./pages/games/GulzhanatPuzzelCrossword";
+import JoytekaTest from "./pages/games/JoytekaTest";
 
 const queryClient = new QueryClient();
 
@@ -91,6 +92,7 @@ const App = () => (
           <Route path="/games/gulzhanat-interacty-easy" element={<GulzhanatInteractyEasy />} />
           <Route path="/games/gulzhanat-interacty-medium" element={<GulzhanatInteractyMedium />} />
           <Route path="/games/gulzhanat-puzzel-crossword" element={<GulzhanatPuzzelCrossword />} />
+          <Route path="/games/joyteka-test" element={<JoytekaTest />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/feedback" element={<Feedback />} />

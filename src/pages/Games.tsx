@@ -27,6 +27,7 @@ const Games = () => {
       time: "8 мин",
       players: "1",
       color: "secondary",
+      author: "Teacher Gulzhanat",
       path: "/games/educaplay-adverbs"
     },
     {
@@ -36,6 +37,7 @@ const Games = () => {
       time: "10 мин",
       players: "1",
       color: "accent",
+      author: "Teacher Gulzhanat",
       path: "/games/educaplay-dictation"
     },
     {
@@ -45,6 +47,7 @@ const Games = () => {
       time: "5 мин",
       players: "1",
       color: "success",
+      author: "Teacher Gulzhanat",
       path: "/games/educaplay-true-false"
     },
     {
@@ -54,6 +57,7 @@ const Games = () => {
       time: "5 мин",
       players: "1",
       color: "primary",
+      author: "Teacher Altynai",
       path: "/games/educaplay-yes-no"
     },
     {
@@ -63,6 +67,7 @@ const Games = () => {
       time: "8 мин",
       players: "1",
       color: "secondary",
+      author: "Teacher Altynai",
       path: "/games/educaplay-present-simple-quiz"
     },
     {
@@ -200,6 +205,16 @@ const Games = () => {
       color: "warning",
       author: "Teacher Gulzhanat",
       path: "/games/gulzhanat-puzzel-crossword"
+    },
+    {
+      title: "Joyteka Test",
+      description: "Орта деңгейдегі ағылшын тілі тесті",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Altynai",
+      path: "/games/joyteka-test"
     }
   ];
 
