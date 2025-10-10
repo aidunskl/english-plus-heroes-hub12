@@ -78,6 +78,7 @@ const Games = () => {
       time: "5 мин",
       players: "1",
       color: "primary",
+      author: "Teacher Anel",
       path: "/games/countries-matching"
     },
     {
@@ -87,6 +88,7 @@ const Games = () => {
       time: "10 мин",
       players: "1",
       color: "secondary",
+      author: "Teacher Anel",
       path: "/games/language-quiz"
     },
     {
@@ -106,6 +108,7 @@ const Games = () => {
       time: "8 мин",
       players: "2+",
       color: "success",
+      author: "Teacher Anel",
       path: "/games/guess-the-country"
     },
     {
@@ -115,6 +118,7 @@ const Games = () => {
       time: "10 мин",
       players: "1",
       color: "primary",
+      author: "Teacher Anel",
       path: "/games/vocabulary-flashcards"
     },
     {
@@ -124,6 +128,7 @@ const Games = () => {
       time: "20 мин",
       players: "1",
       color: "secondary",
+      author: "Teacher Anel",
       path: "/games/city-description-builder"
     },
     // Anel games
