@@ -95,6 +95,7 @@ const Games = () => {
       time: "15 мин",
       players: "1",
       color: "accent",
+      author: "Teacher Altynai",
       path: "/games/present-simple-challenge"
     },
     {
