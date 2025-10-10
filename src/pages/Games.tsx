@@ -18,6 +18,7 @@ const Games = () => {
       time: "5 мин",
       players: "1",
       color: "primary",
+      author: "Teacher Gulzhanat",
       path: "/games/adverbs-match"
     },
     {
