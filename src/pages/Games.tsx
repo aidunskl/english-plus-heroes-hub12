@@ -118,6 +118,88 @@ const Games = () => {
       players: "1",
       color: "secondary",
       path: "/games/city-description-builder"
+    },
+    // Anel games
+    {
+      title: "Fyrebox Game",
+      description: "Күрделі тапсырмалармен ағылшын тілін дамыту",
+      difficulty: "Hard",
+      time: "15 мин",
+      players: "1",
+      color: "destructive",
+      author: "Teacher Anel",
+      path: "/games/anel-fyrebox"
+    },
+    {
+      title: "Puzzel Fill-in-the-gap",
+      description: "Орта деңгейдегі грамматика жаттығулары",
+      difficulty: "Medium",
+      time: "10 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Anel",
+      path: "/games/anel-puzzel-fill"
+    },
+    {
+      title: "Puzzel Board Game",
+      description: "Орта деңгейдегі интерактивті тақта ойыны",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "2+",
+      color: "warning",
+      author: "Teacher Anel",
+      path: "/games/anel-puzzel-board"
+    },
+    {
+      title: "Educandy Wordsearch",
+      description: "Күрделі деңгейдегі сөз іздеу ойыны",
+      difficulty: "Hard",
+      time: "15 мин",
+      players: "1",
+      color: "destructive",
+      author: "Teacher Anel",
+      path: "/games/anel-educandy"
+    },
+    // Gulzhanat games
+    {
+      title: "Educaplay Learning Resource",
+      description: "Күрделі деңгейдегі ағылшын тілі оқу ресурсы",
+      difficulty: "Hard",
+      time: "20 мин",
+      players: "1",
+      color: "destructive",
+      author: "Teacher Gulzhanat",
+      path: "/games/gulzhanat-educaplay"
+    },
+    {
+      title: "Interacty Easy Game",
+      description: "Бастапқы деңгейдегі ағылшын тілі ойыны",
+      difficulty: "Easy",
+      time: "8 мин",
+      players: "1",
+      color: "success",
+      author: "Teacher Gulzhanat",
+      path: "/games/gulzhanat-interacty-easy"
+    },
+    {
+      title: "Interacty Medium Game",
+      description: "Орта деңгейдегі ағылшын тілі ойыны",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Gulzhanat",
+      path: "/games/gulzhanat-interacty-medium"
+    },
+    {
+      title: "Puzzel Crossword",
+      description: "Орта деңгейдегі сөзжұмбақ ойыны",
+      difficulty: "Medium",
+      time: "15 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Gulzhanat",
+      path: "/games/gulzhanat-puzzel-crossword"
     }
   ];
 
@@ -202,7 +284,12 @@ const Games = () => {
                   <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
                     {game.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4">{game.description}</p>
+                  <p className="text-muted-foreground mb-2">{game.description}</p>
+                  {game.author && (
+                    <p className="text-sm text-primary font-medium mb-4">
+                      👨‍🏫 {game.author}
+                    </p>
+                  )}
                   
                   <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">

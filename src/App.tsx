@@ -37,6 +37,16 @@ import PresentSimpleChallenge from "./pages/games/PresentSimpleChallenge";
 import GuessTheCountry from "./pages/games/GuessTheCountry";
 import VocabularyFlashcards from "./pages/games/VocabularyFlashcards";
 import CityDescriptionBuilder from "./pages/games/CityDescriptionBuilder";
+// Anel games
+import AnelFyrebox from "./pages/games/AnelFyrebox";
+import AnelPuzzelFill from "./pages/games/AnelPuzzelFill";
+import AnelPuzzelBoard from "./pages/games/AnelPuzzelBoard";
+import AnelEducandy from "./pages/games/AnelEducandy";
+// Gulzhanat games
+import GulzhanatEducaplay from "./pages/games/GulzhanatEducaplay";
+import GulzhanatInteractyEasy from "./pages/games/GulzhanatInteractyEasy";
+import GulzhanatInteractyMedium from "./pages/games/GulzhanatInteractyMedium";
+import GulzhanatPuzzelCrossword from "./pages/games/GulzhanatPuzzelCrossword";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +81,16 @@ const App = () => (
           <Route path="/games/guess-the-country" element={<GuessTheCountry />} />
           <Route path="/games/vocabulary-flashcards" element={<VocabularyFlashcards />} />
           <Route path="/games/city-description-builder" element={<CityDescriptionBuilder />} />
+          {/* Anel games */}
+          <Route path="/games/anel-fyrebox" element={<AnelFyrebox />} />
+          <Route path="/games/anel-puzzel-fill" element={<AnelPuzzelFill />} />
+          <Route path="/games/anel-puzzel-board" element={<AnelPuzzelBoard />} />
+          <Route path="/games/anel-educandy" element={<AnelEducandy />} />
+          {/* Gulzhanat games */}
+          <Route path="/games/gulzhanat-educaplay" element={<GulzhanatEducaplay />} />
+          <Route path="/games/gulzhanat-interacty-easy" element={<GulzhanatInteractyEasy />} />
+          <Route path="/games/gulzhanat-interacty-medium" element={<GulzhanatInteractyMedium />} />
+          <Route path="/games/gulzhanat-puzzel-crossword" element={<GulzhanatPuzzelCrossword />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/feedback" element={<Feedback />} />
