@@ -222,6 +222,16 @@ const Games = () => {
       color: "warning",
       author: "Teacher Altynai",
       path: "/games/joyteka-test"
+    },
+    {
+      title: "Wordwall Guess the Country",
+      description: "Орта деңгейдегі елдерді табу ойыны",
+      difficulty: "Medium",
+      time: "8 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Samal",
+      path: "/games/wordwall-guess-country"
     }
   ];
 
