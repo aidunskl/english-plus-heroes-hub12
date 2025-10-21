@@ -115,6 +115,19 @@ const Videos = () => {
       difficulty: "Medium",
       rating: 4.8,
       type: "youtube"
+    },
+    {
+      id: "teacher-altynai-video",
+      title: "Teacher Altynai Video Lesson",
+      duration: "9:15",
+      lesson: "Additional",
+      description: "Teacher Altynai-ның ағылшын тілі сабағы. Тіл дағдыларын дамыту.",
+      src: "/videos/teacher-altynai-lesson.mp4",
+      youtubeId: "F6uNNE5qdb8", // Teacher Altynai Video
+      thumbnail: "/assets/hero-background.jpg",
+      difficulty: "Medium",
+      rating: 4.9,
+      type: "youtube"
     }
   ];
 
