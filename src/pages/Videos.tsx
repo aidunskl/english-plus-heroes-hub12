@@ -115,7 +115,8 @@ const Videos = () => {
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
       rating: 4.8,
-      type: "youtube"
+      type: "youtube",
+      author: "Teacher Sholpan"
     },
     {
       id: "teacher-altynai-video",
@@ -128,7 +129,8 @@ const Videos = () => {
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
       rating: 4.9,
-      type: "youtube"
+      type: "youtube",
+      author: "Teacher Altynai"
     }
   ];
 
