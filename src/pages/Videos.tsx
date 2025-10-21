@@ -4,7 +4,7 @@ import YouTubePlayer from "@/components/YouTubePlayer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Video, Play, Clock, BookOpen, Star, Download, Youtube } from "lucide-react";
+import { Video, Play, Clock, BookOpen, Star, Download, Youtube, User } from "lucide-react";
 import { useState } from "react";
 
 const Videos = () => {
@@ -101,7 +101,8 @@ const Videos = () => {
       thumbnail: "/assets/hero-background.jpg",
       difficulty: "Medium",
       rating: 4.7,
-      type: "youtube"
+      type: "youtube",
+      author: "Teacher Gulzhanat"
     },
     {
       id: "teacher-sholpan-video",
@@ -235,6 +236,13 @@ const Videos = () => {
                     <p className="text-muted-foreground text-sm mb-4">
                       {video.description}
                     </p>
+
+                    {video.author && (
+                      <div className="flex items-center gap-2 mb-4">
+                        <User className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm text-muted-foreground">Автор: {video.author}</span>
+                      </div>
+                    )}
 
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-1">
