@@ -232,6 +232,26 @@ const Games = () => {
       color: "warning",
       author: "Teacher Samal",
       path: "/games/wordwall-guess-country"
+    },
+    {
+      title: "Blooket Game 2",
+      description: "Ағылшын тілін үйрену үшін интерактивті ойын",
+      difficulty: "Medium",
+      time: "10 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Altynai",
+      path: "/games/blooket-game2"
+    },
+    {
+      title: "Educaplay Yes/No - Countries & Nationalities",
+      description: "Елдер мен ұлттықтар туралы Yes/No ойыны",
+      difficulty: "Medium",
+      time: "7 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Sholpan",
+      path: "/games/educaplay-yesno-countries"
     }
   ];
 

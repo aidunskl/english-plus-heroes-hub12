@@ -102,6 +102,19 @@ const Videos = () => {
       difficulty: "Medium",
       rating: 4.7,
       type: "youtube"
+    },
+    {
+      id: "teacher-sholpan-video",
+      title: "Teacher Sholpan Video Lesson",
+      duration: "8:30",
+      lesson: "Additional",
+      description: "Teacher Sholpan-ның ағылшын тілі сабағы. Тіл дағдыларын дамыту.",
+      src: "/videos/teacher-sholpan-lesson.mp4",
+      youtubeId: "XAy2wrPIIB8", // Teacher Sholpan Video
+      thumbnail: "/assets/hero-background.jpg",
+      difficulty: "Medium",
+      rating: 4.8,
+      type: "youtube"
     }
   ];
 
