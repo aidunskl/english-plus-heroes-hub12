@@ -252,6 +252,37 @@ const Games = () => {
       color: "warning",
       author: "Teacher Sholpan",
       path: "/games/educaplay-yesno-countries"
+    },
+    // Sholpan games
+    {
+      title: "Educaplay LTI Integration",
+      description: "Educaplay ойындарын LMS-ке интеграциялау",
+      difficulty: "Medium",
+      time: "10 мин",
+      players: "1",
+      color: "accent",
+      author: "Teacher Sholpan",
+      path: "/games/sholpan-educaplay-lti"
+    },
+    {
+      title: "Find a Place on the Map",
+      description: "Картада жер табу ойыны",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "1",
+      color: "accent",
+      author: "Teacher Sholpan",
+      path: "/games/sholpan-interacty-map"
+    },
+    {
+      title: "Interacty Interactive Project",
+      description: "Интерактивті ағылшын тілі ойыны",
+      difficulty: "Medium",
+      time: "15 мин",
+      players: "1",
+      color: "accent",
+      author: "Teacher Sholpan",
+      path: "/games/sholpan-interacty-project"
     }
   ];
 

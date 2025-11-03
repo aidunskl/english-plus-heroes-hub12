@@ -51,6 +51,10 @@ import JoytekaTest from "./pages/games/JoytekaTest";
 import WordwallGuessCountry from "./pages/games/WordwallGuessCountry";
 import BlooketGame2 from "./pages/games/BlooketGame2";
 import EducaplayYesNoCountries from "./pages/games/EducaplayYesNoCountries";
+// Sholpan games
+import SholpanEducaplayLTI from "./pages/games/SholpanEducaplayLTI";
+import SholpanInteractyMap from "./pages/games/SholpanInteractyMap";
+import SholpanInteractyProject from "./pages/games/SholpanInteractyProject";
 
 const queryClient = new QueryClient();
 
@@ -99,6 +103,10 @@ const App = () => (
           <Route path="/games/wordwall-guess-country" element={<WordwallGuessCountry />} />
           <Route path="/games/blooket-game2" element={<BlooketGame2 />} />
           <Route path="/games/educaplay-yesno-countries" element={<EducaplayYesNoCountries />} />
+          {/* Sholpan games */}
+          <Route path="/games/sholpan-educaplay-lti" element={<SholpanEducaplayLTI />} />
+          <Route path="/games/sholpan-interacty-map" element={<SholpanInteractyMap />} />
+          <Route path="/games/sholpan-interacty-project" element={<SholpanInteractyProject />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/feedback" element={<Feedback />} />
