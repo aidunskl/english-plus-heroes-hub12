@@ -55,6 +55,8 @@ import EducaplayYesNoCountries from "./pages/games/EducaplayYesNoCountries";
 import SholpanEducaplayLTI from "./pages/games/SholpanEducaplayLTI";
 import SholpanInteractyMap from "./pages/games/SholpanInteractyMap";
 import SholpanInteractyProject from "./pages/games/SholpanInteractyProject";
+// Samal games
+import SamalEducaplayCountriesDishes from "./pages/games/SamalEducaplayCountriesDishes";
 
 const queryClient = new QueryClient();
 
@@ -107,6 +109,8 @@ const App = () => (
           <Route path="/games/sholpan-educaplay-lti" element={<SholpanEducaplayLTI />} />
           <Route path="/games/sholpan-interacty-map" element={<SholpanInteractyMap />} />
           <Route path="/games/sholpan-interacty-project" element={<SholpanInteractyProject />} />
+          {/* Samal games */}
+          <Route path="/games/samal-educaplay-countries-dishes" element={<SamalEducaplayCountriesDishes />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/feedback" element={<Feedback />} />

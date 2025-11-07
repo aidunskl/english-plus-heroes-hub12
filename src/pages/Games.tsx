@@ -283,6 +283,17 @@ const Games = () => {
       color: "accent",
       author: "Teacher Sholpan",
       path: "/games/sholpan-interacty-project"
+    },
+    // Samal games
+    {
+      title: "Countries and Traditional Dishes Match",
+      description: "Елдерді олардың дәстүрлі тағамдарымен сәйкестендіру",
+      difficulty: "Medium",
+      time: "10 мин",
+      players: "1",
+      color: "primary",
+      author: "Teacher Samal",
+      path: "/games/samal-educaplay-countries-dishes"
     }
   ];
 
