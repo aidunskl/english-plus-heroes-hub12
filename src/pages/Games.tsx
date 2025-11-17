@@ -294,6 +294,76 @@ const Games = () => {
       color: "primary",
       author: "Teacher Samal",
       path: "/games/samal-educaplay-countries-dishes"
+    },
+    {
+      title: "TinyTap Head to Toe",
+      description: "TinyTap платформасындағы сөздік ойын",
+      difficulty: "Easy",
+      time: "6 мин",
+      players: "1",
+      color: "success",
+      author: "Teacher Gulzhanat",
+      path: "/games/gulzhanat-tinytap"
+    },
+    {
+      title: "LearningApps Interactive Task",
+      description: "LearningApps тапсырмасын орында",
+      difficulty: "Medium",
+      time: "8 мин",
+      players: "1",
+      color: "secondary",
+      author: "Teacher Samal",
+      path: "/games/samal-learningapps"
+    },
+    {
+      title: "World Capitals Word Search",
+      description: "Flippity сөзжұмбағында астаналарды тап",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "1",
+      color: "accent",
+      author: "Teacher Sholpan",
+      path: "/games/sholpan-flippity-wordsearch"
+    },
+    {
+      title: "Present Simple Kahoot",
+      description: "Kahoot-та Present Simple бойынша викторина",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "1-4",
+      color: "warning",
+      author: "Teacher Altynai",
+      path: "/games/altynai-kahoot-present-simple"
+    },
+    {
+      title: "Wayground Quiz 1",
+      description: "Wayground платформасындағы бірінші викторина",
+      difficulty: "Medium",
+      time: "10 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Altynai",
+      path: "/games/altynai-wayground-quiz1"
+    },
+    {
+      title: "Wayground Quiz 2",
+      description: "Wayground платформасындағы екінші викторина",
+      difficulty: "Medium",
+      time: "10 мин",
+      players: "1",
+      color: "warning",
+      author: "Teacher Altynai",
+      path: "/games/altynai-wayground-quiz2"
+    },
+    {
+      title: "Blooket Vocabulary Set",
+      description: "Blooket жиынтығымен сөздерді бекіт",
+      difficulty: "Medium",
+      time: "12 мин",
+      players: "1-4",
+      color: "primary",
+      author: "Teacher Samal",
+      path: "/games/samal-blooket-set"
     }
   ];
 

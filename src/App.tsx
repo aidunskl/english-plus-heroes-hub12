@@ -47,14 +47,23 @@ import GulzhanatEducaplay from "./pages/games/GulzhanatEducaplay";
 import GulzhanatInteractyEasy from "./pages/games/GulzhanatInteractyEasy";
 import GulzhanatInteractyMedium from "./pages/games/GulzhanatInteractyMedium";
 import GulzhanatPuzzelCrossword from "./pages/games/GulzhanatPuzzelCrossword";
+import GulzhanatTinyTap from "./pages/games/GulzhanatTinyTap";
 import JoytekaTest from "./pages/games/JoytekaTest";
 import WordwallGuessCountry from "./pages/games/WordwallGuessCountry";
 import BlooketGame2 from "./pages/games/BlooketGame2";
 import EducaplayYesNoCountries from "./pages/games/EducaplayYesNoCountries";
+import SamalLearningApps from "./pages/games/SamalLearningApps";
 // Sholpan games
 import SholpanEducaplayLTI from "./pages/games/SholpanEducaplayLTI";
 import SholpanInteractyMap from "./pages/games/SholpanInteractyMap";
 import SholpanInteractyProject from "./pages/games/SholpanInteractyProject";
+import SholpanFlippityWordSearch from "./pages/games/SholpanFlippityWordSearch";
+// Altynai games
+import AltynaiKahootPresentSimple from "./pages/games/AltynaiKahootPresentSimple";
+import AltynaiWaygroundQuizOne from "./pages/games/AltynaiWaygroundQuizOne";
+import AltynaiWaygroundQuizTwo from "./pages/games/AltynaiWaygroundQuizTwo";
+// Samal games
+import SamalBlooketSet from "./pages/games/SamalBlooketSet";
 // Samal games
 import SamalEducaplayCountriesDishes from "./pages/games/SamalEducaplayCountriesDishes";
 
@@ -101,15 +110,23 @@ const App = () => (
           <Route path="/games/gulzhanat-interacty-easy" element={<GulzhanatInteractyEasy />} />
           <Route path="/games/gulzhanat-interacty-medium" element={<GulzhanatInteractyMedium />} />
           <Route path="/games/gulzhanat-puzzel-crossword" element={<GulzhanatPuzzelCrossword />} />
+          <Route path="/games/gulzhanat-tinytap" element={<GulzhanatTinyTap />} />
           <Route path="/games/joyteka-test" element={<JoytekaTest />} />
           <Route path="/games/wordwall-guess-country" element={<WordwallGuessCountry />} />
           <Route path="/games/blooket-game2" element={<BlooketGame2 />} />
           <Route path="/games/educaplay-yesno-countries" element={<EducaplayYesNoCountries />} />
+          <Route path="/games/samal-learningapps" element={<SamalLearningApps />} />
           {/* Sholpan games */}
           <Route path="/games/sholpan-educaplay-lti" element={<SholpanEducaplayLTI />} />
           <Route path="/games/sholpan-interacty-map" element={<SholpanInteractyMap />} />
           <Route path="/games/sholpan-interacty-project" element={<SholpanInteractyProject />} />
+          <Route path="/games/sholpan-flippity-wordsearch" element={<SholpanFlippityWordSearch />} />
+          {/* Altynai games */}
+          <Route path="/games/altynai-kahoot-present-simple" element={<AltynaiKahootPresentSimple />} />
+          <Route path="/games/altynai-wayground-quiz1" element={<AltynaiWaygroundQuizOne />} />
+          <Route path="/games/altynai-wayground-quiz2" element={<AltynaiWaygroundQuizTwo />} />
           {/* Samal games */}
+          <Route path="/games/samal-blooket-set" element={<SamalBlooketSet />} />
           <Route path="/games/samal-educaplay-countries-dishes" element={<SamalEducaplayCountriesDishes />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/videos" element={<Videos />} />
