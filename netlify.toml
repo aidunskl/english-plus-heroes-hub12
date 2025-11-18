@@ -18,3 +18,9 @@
   from = "/presentations/*"
   to = "/:splat"
   status = 200
+
+# SPA fallback - redirect all routes to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
