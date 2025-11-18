@@ -176,6 +176,30 @@ const Index = () => {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <Card className="relative overflow-hidden bg-gradient-hero p-8 md:p-12">
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Дайынсың ба?
+              </h2>
+              <p className="text-xl text-white/90 mb-8">
+                Бірінші сабақты бастап, жаңа білімді игеруді қазір бастаймыз!
+              </p>
+              <Button size="lg" variant="secondary" className="gap-2 shadow-strong" asChild>
+                <Link to="/lessons/1">
+                  Lesson 1-ді бастау
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24" />
+          </Card>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-card border-t border-border py-8 px-4">
         <div className="container mx-auto text-center text-muted-foreground">
