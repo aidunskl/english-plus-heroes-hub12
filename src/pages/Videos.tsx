@@ -53,6 +53,34 @@ const Videos = () => {
       rating: 4.9,
       type: "youtube",
       author: "Teacher Altynai"
+    },
+    {
+      id: "teacher-samal-video",
+      title: "Teacher Samal Video Lesson",
+      duration: "10:00",
+      lesson: "Additional",
+      description: "Teacher Samal-ның ағылшын тілі сабағы. Тіл дағдыларын дамыту.",
+      src: "/videos/teacher-samal-lesson.mp4",
+      youtubeId: "RZiZhjSYcyY", // Teacher Samal Video
+      thumbnail: "/assets/hero-background.jpg",
+      difficulty: "Medium",
+      rating: 4.8,
+      type: "youtube",
+      author: "Teacher Samal"
+    },
+    {
+      id: "teacher-anel-video",
+      title: "Teacher Anel Video Lesson",
+      duration: "10:00",
+      lesson: "Additional",
+      description: "Teacher Anel-ның ағылшын тілі сабағы. Тіл дағдыларын дамыту.",
+      src: "/videos/teacher-anel-lesson.mp4",
+      youtubeId: "GDY9IldfjHc", // Teacher Anel Video
+      thumbnail: "/assets/hero-background.jpg",
+      difficulty: "Medium",
+      rating: 4.8,
+      type: "youtube",
+      author: "Teacher Anel"
     }
   ];
 
